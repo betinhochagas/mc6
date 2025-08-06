@@ -1381,9 +1381,8 @@ img {
     justify-content: center;
     position: relative;
     z-index: 10;
-    opacity: 1;
-    visibility: visible;
-    transition: all 1s ease-out;
+    /* Removido opacity: 1 e visibility: visible para usar o sistema de transições */
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Estado inicial dos cards (antes da animação) */
@@ -1417,23 +1416,32 @@ img {
     transform: translateY(0) scale(1);
 }
 
+/* === SISTEMA DE TRANSIÇÕES FADE + SCALE + BLUR === */
 /* Controle de visibilidade das seções baseado no scroll */
 .hero.section-hidden,
+.features.section-hidden,
+.services.section-hidden,
 .cases.section-hidden {
     opacity: 0;
+    transform: scale(0.95);
+    filter: blur(10px);
     visibility: hidden;
     pointer-events: none;
     z-index: 1;
-    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .hero.section-visible,
+.features.section-visible,
+.services.section-visible,
 .cases.section-visible {
     opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
     visibility: visible;
     pointer-events: auto;
     z-index: 5;
-    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .features-grid {
@@ -1869,6 +1877,11 @@ img {
 /* Services Section */
 .services {
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .services-wrapper {
@@ -2112,6 +2125,11 @@ img {
     background: linear-gradient(135deg, rgba(0, 102, 204, 0.05), rgba(0, 204, 102, 0.05));
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .cases::before {

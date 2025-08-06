@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const servicesSection = document.querySelector('.services');
     const casesSection = document.querySelector('.cases');
     let featuresRevealed = false;
-    let currentSection = 'hero'; // hero, features, services, cases
+    let currentSection = 'hero'; // hero, features, cases, services (ordem do HTML)
     let isScrolling = false;
     
     function updateSectionVisibility() {
@@ -226,6 +226,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const heroHeight = heroSectionEl.offsetHeight;
         const featuresTop = featuresSection.offsetTop;
         const featuresHeight = featuresSection.offsetHeight;
+        const casesTop = casesSection.offsetTop;
+        const casesHeight = casesSection.offsetHeight;
         const servicesTop = servicesSection.offsetTop;
         const servicesHeight = servicesSection.offsetHeight;
         
@@ -234,32 +236,42 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollY,
             heroHeight,
             featuresTop,
+            casesTop,
             servicesTop,
             currentSection,
             featuresRevealed
         });
         
-        // Determina qual seção deve estar visível
-        if (scrollY < heroHeight * 0.8) {
+        // Determina qual seção deve estar visível (ordem correta: Hero → Features → Cases → Services)
+        // Usa offsets menores para transições mais suaves
+        if (scrollY < heroHeight * 0.7) {
             // Usuário está na seção hero
             if (currentSection !== 'hero') {
                 currentSection = 'hero';
                 console.log('Switching to HERO section');
                 heroSectionEl.classList.remove('section-hidden');
                 heroSectionEl.classList.add('section-visible');
+                featuresSection.classList.add('section-hidden');
+                featuresSection.classList.remove('section-visible');
                 casesSection.classList.add('section-hidden');
                 casesSection.classList.remove('section-visible');
+                servicesSection.classList.add('section-hidden');
+                servicesSection.classList.remove('section-visible');
             }
-        } else if (scrollY >= heroHeight * 0.8 && 
-                   scrollY < featuresTop + featuresHeight * 0.9) {
+        } else if (scrollY >= heroHeight * 0.7 && 
+                   scrollY < featuresTop + featuresHeight * 0.8) {
             // Usuário está na seção features
             if (currentSection !== 'features') {
                 currentSection = 'features';
                 console.log('Switching to FEATURES section');
                 heroSectionEl.classList.add('section-hidden');
                 heroSectionEl.classList.remove('section-visible');
+                featuresSection.classList.remove('section-hidden');
+                featuresSection.classList.add('section-visible');
                 casesSection.classList.add('section-hidden');
                 casesSection.classList.remove('section-visible');
+                servicesSection.classList.add('section-hidden');
+                servicesSection.classList.remove('section-visible');
                 
                 // Revela a seção features
                 if (!featuresRevealed) {
@@ -268,26 +280,34 @@ document.addEventListener('DOMContentLoaded', function() {
                     featuresRevealed = true;
                 }
             }
-        } else if (scrollY >= featuresTop + featuresHeight * 0.9 && 
-                   scrollY < servicesTop + servicesHeight * 0.9) {
-            // Usuário está na seção services (sempre visível, apenas tracked)
-            if (currentSection !== 'services') {
-                currentSection = 'services';
-                console.log('Switching to SERVICES section');
-                heroSectionEl.classList.add('section-hidden');
-                heroSectionEl.classList.remove('section-visible');
-                casesSection.classList.add('section-hidden');
-                casesSection.classList.remove('section-visible');
-            }
-        } else {
-            // Usuário está na seção cases - qualquer scroll além das services
+        } else if (scrollY >= featuresTop + featuresHeight * 0.8 && 
+                   scrollY < casesTop + casesHeight * 0.8) {
+            // Usuário está na seção cases
             if (currentSection !== 'cases') {
                 currentSection = 'cases';
                 console.log('Switching to CASES section');
                 heroSectionEl.classList.add('section-hidden');
                 heroSectionEl.classList.remove('section-visible');
+                featuresSection.classList.add('section-hidden');
+                featuresSection.classList.remove('section-visible');
                 casesSection.classList.remove('section-hidden');
                 casesSection.classList.add('section-visible');
+                servicesSection.classList.add('section-hidden');
+                servicesSection.classList.remove('section-visible');
+            }
+        } else {
+            // Usuário está na seção services - qualquer scroll além dos cases
+            if (currentSection !== 'services') {
+                currentSection = 'services';
+                console.log('Switching to SERVICES section');
+                heroSectionEl.classList.add('section-hidden');
+                heroSectionEl.classList.remove('section-visible');
+                featuresSection.classList.add('section-hidden');
+                featuresSection.classList.remove('section-visible');
+                casesSection.classList.add('section-hidden');
+                casesSection.classList.remove('section-visible');
+                servicesSection.classList.remove('section-hidden');
+                servicesSection.classList.add('section-visible');
             }
         }
     }
@@ -304,12 +324,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Inicializa o sistema se os elementos existirem
     if (featuresSection && heroSectionEl && servicesSection && casesSection) {
-        console.log('Initializing fullscreen section system with services');
+        console.log('Initializing fullscreen section system (Hero → Features → Cases → Services)');
         
-        // Define estado inicial - services sempre visível
+        // Define estado inicial - hero visível, outras ocultas
         heroSectionEl.classList.add('section-visible');
+        featuresSection.classList.add('section-hidden');
         casesSection.classList.add('section-hidden');
-        // services não é controlada por section-hidden/visible
+        servicesSection.classList.add('section-hidden');
         
         window.addEventListener('scroll', scrollHandler, { passive: true });
         
