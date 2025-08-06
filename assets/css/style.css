@@ -1374,7 +1374,66 @@ img {
 /* Features Section */
 .features {
     background-color: rgba(0,0,0,0.15);
-    padding: 80px 0;
+    min-height: 100vh;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transition: all 1s ease-out;
+}
+
+/* Estado inicial dos cards (antes da animação) */
+.features .feature-card {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.features .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.features.reveal-section {
+    background: linear-gradient(135deg, 
+        rgba(0, 15, 35, 0.95) 0%, 
+        rgba(0, 25, 50, 0.95) 50%, 
+        rgba(0, 35, 70, 0.95) 100%);
+}
+
+/* Animação dos cards quando a seção é revelada */
+.features.reveal-section .feature-card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Controle de visibilidade das seções baseado no scroll */
+.hero.section-hidden,
+.cases.section-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.hero.section-visible,
+.cases.section-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 5;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
 }
 
 .features-grid {
@@ -1384,15 +1443,29 @@ img {
     text-align: center;
 }
 
+/* Cards Animation - Estado inicial e animações */
 .feature-card {
     position: relative;
     padding: 40px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
     overflow: hidden;
+}
+
+/* Stagger animation delays */
+.features.reveal-section .feature-card:nth-child(1) {
+    transition-delay: 0.3s;
+}
+
+.features.reveal-section .feature-card:nth-child(2) {
+    transition-delay: 0.6s;
+}
+
+.features.reveal-section .feature-card:nth-child(3) {
+    transition-delay: 0.9s;
 }
 
 .feature-card::before {
@@ -1453,6 +1526,97 @@ img {
 
 .feature-card:hover .feature-icon::after {
     opacity: 0.7;
+}
+
+/* Feature Metrics */
+.feature-metrics {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.metric-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--light);
+    transition: all 0.3s ease;
+}
+
+.metric-badge.primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
+}
+
+.feature-card:hover .metric-badge {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 204, 102, 0.2);
+}
+
+.feature-card:hover .metric-badge.primary {
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+}
+
+/* Featured Card - Destacar NOC */
+.featured-card {
+    position: relative;
+    border: 2px solid rgba(0, 102, 204, 0.4);
+    background: linear-gradient(135deg, 
+        rgba(0, 102, 204, 0.08) 0%, 
+        rgba(0, 204, 102, 0.08) 100%);
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.featured-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+    animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+    0%, 100% { 
+        box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 6px 20px rgba(0, 102, 204, 0.6);
+        transform: scale(1.05);
+    }
+}
+
+.featured-card:hover {
+    transform: translateY(-10px) scale(1.07);
+    border-color: rgba(0, 102, 204, 0.6);
+    box-shadow: 0 25px 70px rgba(0, 102, 204, 0.3);
+}
+
+.featured-card .feature-icon {
+    box-shadow: 0 0 20px rgba(0, 102, 204, 0.4);
+}
+
+.featured-card:hover .feature-icon {
+    box-shadow: 0 0 35px rgba(0, 102, 204, 0.6);
 }
 
 .feature-card h3 {

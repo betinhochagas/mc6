@@ -1594,3 +1594,45 @@
         left: 10px;
         max-width: none;
     }
+    
+    /* Features Mobile Optimization */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .featured-card {
+        transform: scale(1);
+        margin: 10px 0;
+    }
+    
+    .featured-card:hover {
+        transform: translateY(-5px) scale(1.02);
+    }
+    
+    .featured-badge {
+        top: -10px;
+        right: 15px;
+        padding: 4px 12px;
+        font-size: 0.7rem;
+    }
+    
+    .feature-metrics {
+        gap: 6px;
+        margin-bottom: 15px;
+    }
+    
+    .metric-badge {
+        padding: 3px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .feature-card {
+        padding: 30px 20px;
+    }
+    
+    .feature-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }

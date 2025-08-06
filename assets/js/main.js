@@ -209,6 +209,114 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }, { passive: true });
 
+    // ===== SISTEMA DE CONTROLE DE SEÇÕES FULLSCREEN =====
+    const featuresSection = document.querySelector('.features');
+    const heroSectionEl = document.querySelector('.hero');
+    const servicesSection = document.querySelector('.services');
+    const casesSection = document.querySelector('.cases');
+    let featuresRevealed = false;
+    let currentSection = 'hero'; // hero, features, services, cases
+    let isScrolling = false;
+    
+    function updateSectionVisibility() {
+        if (!featuresSection || !heroSectionEl || !servicesSection || !casesSection) return;
+        
+        const scrollY = window.scrollY;
+        const viewportHeight = window.innerHeight;
+        const heroHeight = heroSectionEl.offsetHeight;
+        const featuresTop = featuresSection.offsetTop;
+        const featuresHeight = featuresSection.offsetHeight;
+        const servicesTop = servicesSection.offsetTop;
+        const servicesHeight = servicesSection.offsetHeight;
+        
+        // Debug log
+        console.log('Scroll Position:', {
+            scrollY,
+            heroHeight,
+            featuresTop,
+            servicesTop,
+            currentSection,
+            featuresRevealed
+        });
+        
+        // Determina qual seção deve estar visível
+        if (scrollY < heroHeight * 0.8) {
+            // Usuário está na seção hero
+            if (currentSection !== 'hero') {
+                currentSection = 'hero';
+                console.log('Switching to HERO section');
+                heroSectionEl.classList.remove('section-hidden');
+                heroSectionEl.classList.add('section-visible');
+                casesSection.classList.add('section-hidden');
+                casesSection.classList.remove('section-visible');
+            }
+        } else if (scrollY >= heroHeight * 0.8 && 
+                   scrollY < featuresTop + featuresHeight * 0.9) {
+            // Usuário está na seção features
+            if (currentSection !== 'features') {
+                currentSection = 'features';
+                console.log('Switching to FEATURES section');
+                heroSectionEl.classList.add('section-hidden');
+                heroSectionEl.classList.remove('section-visible');
+                casesSection.classList.add('section-hidden');
+                casesSection.classList.remove('section-visible');
+                
+                // Revela a seção features
+                if (!featuresRevealed) {
+                    console.log('Revealing features section');
+                    featuresSection.classList.add('reveal-section');
+                    featuresRevealed = true;
+                }
+            }
+        } else if (scrollY >= featuresTop + featuresHeight * 0.9 && 
+                   scrollY < servicesTop + servicesHeight * 0.9) {
+            // Usuário está na seção services (sempre visível, apenas tracked)
+            if (currentSection !== 'services') {
+                currentSection = 'services';
+                console.log('Switching to SERVICES section');
+                heroSectionEl.classList.add('section-hidden');
+                heroSectionEl.classList.remove('section-visible');
+                casesSection.classList.add('section-hidden');
+                casesSection.classList.remove('section-visible');
+            }
+        } else {
+            // Usuário está na seção cases - qualquer scroll além das services
+            if (currentSection !== 'cases') {
+                currentSection = 'cases';
+                console.log('Switching to CASES section');
+                heroSectionEl.classList.add('section-hidden');
+                heroSectionEl.classList.remove('section-visible');
+                casesSection.classList.remove('section-hidden');
+                casesSection.classList.add('section-visible');
+            }
+        }
+    }
+
+    function scrollHandler() {
+        if (!isScrolling) {
+            isScrolling = true;
+            requestAnimationFrame(() => {
+                updateSectionVisibility();
+                isScrolling = false;
+            });
+        }
+    }
+
+    // Inicializa o sistema se os elementos existirem
+    if (featuresSection && heroSectionEl && servicesSection && casesSection) {
+        console.log('Initializing fullscreen section system with services');
+        
+        // Define estado inicial - services sempre visível
+        heroSectionEl.classList.add('section-visible');
+        casesSection.classList.add('section-hidden');
+        // services não é controlada por section-hidden/visible
+        
+        window.addEventListener('scroll', scrollHandler, { passive: true });
+        
+        // Verifica estado inicial
+        updateSectionVisibility();
+    }
+
     // ===== HERO SLIDER INTERATIVO =====
     const heroSlides = document.querySelectorAll('.hero-slide');
     const heroImages = document.querySelectorAll('.hero-bg-image');
