@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel MC6</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="icon" type="image/png" href="../../assets/media/images/favicon.webp">
+    <style>
+        .admin-panel { padding-block: 50px; }
+        .admin-section { background: var(--dark); padding: 30px; border-radius: var(--border-radius); margin-bottom: 40px; }
+        .admin-section h2 { border-bottom: 2px solid var(--accent); padding-bottom: 15px; }
+        .item-list { list-style: none; padding: 0; }
+        .item-list li { display: flex; justify-content: space-between; align-items: center; background: var(--darker); padding: 15px; border-radius: 8px; margin-bottom: 10px; }
+        .edit-btn { background: var(--primary); color: #fff; border: none; padding: 8px 12px; border-radius: 5px; }
+        .admin-form input, .admin-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--gray); background: var(--darker); color: #fff; }
+        
+        /* Estilos do Modal */
+        .modal { display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); }
+        .modal-content { background-color: var(--dark); margin: 10% auto; padding: 30px; border-radius: var(--border-radius); border: 1px solid var(--gray); width: 90%; max-width: 600px; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--gray); padding-bottom: 15px; margin-bottom: 20px; }
+        .close-btn { color: #aaa; font-size: 28px; font-weight: bold; }
+        .modal-footer { display: flex; justify-content: space-between; margin-top: 20px; }
+        .delete-btn { background-color: #ff4d4d; }
+    </style>
+</head>
+<body class="admin-panel">
+    <div class="container admin-panel">
+        <h1>Painel Administrativo MC6</h1>
+        <p>Gerencie os serviços e clientes do seu site.</p>
+
+        <div class="admin-section">
+            <h2>Gerenciar Serviços</h2>
+            <ul id="service-list" class="item-list"></ul>
+            <h3>Adicionar Novo Serviço</h3>
+            <form id="add-service-form" class="admin-form">
+                <input type="text" id="service-title" placeholder="Título do Serviço" required>
+                <textarea id="service-desc" placeholder="Descrição do Serviço" required></textarea>
+                <input type="text" id="service-image" placeholder="Caminho da Imagem (ex: assets/media/images/novo.webp)" required>
+                <button type="submit" class="btn btn-primary">Adicionar Serviço</button>
+            </form>
+        </div>
+
+        <div class="admin-section">
+            <h2>Gerenciar Clientes</h2>
+            <ul id="client-list" class="item-list"></ul>
+            <h3>Adicionar Novo Cliente</h3>
+            <form id="add-client-form" class="admin-form">
+                <input type="text" id="client-alt" placeholder="Nome do Cliente (para SEO)" required>
+                <input type="text" id="client-image" placeholder="Caminho do Logo (ex: assets/media/images/client/novo.webp)" required>
+                <button type="submit" class="btn btn-primary">Adicionar Cliente</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-service-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Editar Serviço</h2>
+                <span class="close-btn">&times;</span>
+            </div>
+            <form id="edit-service-form" class="admin-form">
+                <input type="hidden" id="edit-service-index">
+                <input type="text" id="edit-service-title" placeholder="Título do Serviço" required>
+                <textarea id="edit-service-desc" placeholder="Descrição do Serviço" required></textarea>
+                <input type="text" id="edit-service-image" placeholder="Caminho da Imagem" required>
+                <input type="text" id="edit-service-icon" placeholder="Classe do Ícone (opcional)">
+                <div class="modal-footer">
+                    <button type="button" class="btn delete-btn">Remover</button>
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-client-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Editar Cliente</h2>
+                <span class="close-btn">&times;</span>
+            </div>
+            <form id="edit-client-form" class="admin-form">
+                <input type="hidden" id="edit-client-index">
+                <input type="text" id="edit-client-alt" placeholder="Nome do Cliente (para SEO)" required>
+                <input type="text" id="edit-client-image" placeholder="Caminho do Logo" required>
+                <div class="modal-footer">
+                    <button type="button" class="btn delete-btn">Remover</button>
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

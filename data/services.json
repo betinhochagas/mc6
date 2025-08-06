@@ -1,0 +1,76 @@
+[
+  {
+    "image": "assets/media/images/unifi.webp",
+    "icon": "fas fa-wifi",
+    "title": "Wi-Fi Gerenciado",
+    "description": "Instalação e gestão de sistemas Wi-Fi de alta densidade para máxima cobertura, estabilidade e segurança."
+  },
+  {
+    "image": "assets/media/images/controller.webp",
+    "icon": "fas fa-server",
+    "title": "Infraestrutura de Redes",
+    "description": "Gerenciamento centralizado, monitoramento em tempo real e otimização da sua rede com painéis intuitivos."
+  },
+  {
+    "image": "assets/media/images/cabling.webp",
+    "icon": "fas fa-network-wired",
+    "title": "Cabeamento Estruturado",
+    "description": "Projetos de infraestrutura CAT6/6A/7 para redes de alta velocidade, com organização profissional e certificação."
+  },
+  {
+    "image": "assets/media/images/rack.webp",
+    "icon": "fas fa-cogs",
+    "title": "Organização de Racks",
+    "description": "Montagem e organização de racks de TI com gestão de cabos e otimização de espaço para máxima eficiência."
+  },
+ 
+  {  
+    "title": "Wi-Fi Corporativo",
+    "description": "Soluções de alta performance para escritórios, lojas e indústrias com gestão centralizada e segurança empresarial.",
+    "image": "assets/media/images/unifi.webp",
+    "icon": "fas fa-building"
+  },
+
+  { 
+    "title": "Redes para Eventos",
+    "description": "Infraestrutura temporária para shows, congressos e feiras com alta capacidade de usuários simultâneos.",
+    "image": "assets/media/images/rack.webp",
+    "icon": "fas fa-calendar-alt"
+  },
+  {
+    "title": "Projetos Residenciais Premium",
+    "description": "Sistemas completos para residências de alto padrão com cobertura total e máxima velocidade.",
+    "image": "assets/media/images/micro.webp",
+    "icon": "fas fa-home"
+  },
+  {
+    "title": "Monitoramento 24/7",
+    "description": "Gestão proativa da sua rede com alertas em tempo real e suporte especializado permanente.",
+    "image": "assets/media/images/controller.webp",
+    "icon": "fas fa-headset"
+  },
+  {
+    "title": "Consultoria em TI",
+    "description": "Análise e otimização da infraestrutura de TI com recomendações personalizadas para sua empresa.",
+    "image": "assets/media/images/cabling.webp",
+    "icon": "fas fa-lightbulb"
+  },
+  {
+    "title": "Suporte Técnico Especializado",
+    "description": "Atendimento técnico remoto e presencial com profissionais qualificados para resolver qualquer problema de rede.",
+    "image": "assets/media/images/controller.webp",
+    "icon": "fas fa-tools"
+  },
+  {
+    "title": "Soluções Personalizadas",
+    "description": "Desenvolvimento de soluções sob medida para atender às necessidades específicas do seu negócio.",
+    "image": "assets/media/images/rack.webp",
+    "icon": "fas fa-cogs"
+  },
+  {
+    "title": "Treinamento e Capacitação",
+    "description": "Cursos e workshops para capacitar sua equipe na gestão e manutenção de redes de alta performance.",
+    "image": "assets/media/images/unifi.webp",
+    "icon": "fas fa-chalkboard-teacher"
+  }
+]

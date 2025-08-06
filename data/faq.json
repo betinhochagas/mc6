@@ -1,0 +1,88 @@
+{
+  "faqs": [
+    {
+      "id": 1,
+      "question": "Quais tipos de redes vocês instalam?",
+      "answer": "Instalamos redes cabeadas estruturadas Cat5e/Cat6, redes WiFi corporativas (Ubiquiti UniFi), redes mesh residenciais e comerciais, e soluções híbridas que combinam tecnologias para máxima cobertura e performance.",
+      "category": "tecnico",
+      "keywords": "rede cabeada wifi mesh unifi cat5e cat6 instalação"
+    },
+    {
+      "id": 2,
+      "question": "Quanto tempo demora uma instalação de rede?",
+      "answer": "O tempo varia conforme o projeto: instalações residenciais simples levam 4-8 horas, enquanto projetos comerciais podem levar de 2-5 dias úteis. Fazemos um cronograma detalhado após a visita técnica.",
+      "category": "comercial",
+      "keywords": "tempo instalação prazo cronograma visita técnica"
+    },
+    {
+      "id": 3,
+      "question": "Vocês atendem final de semana?",
+      "answer": "Sim! Oferecemos atendimento em finais de semana e feriados para não impactar o funcionamento do seu negócio. Consulte nossa disponibilidade e valores diferenciados para horários especiais.",
+      "category": "comercial",
+      "keywords": "final semana feriado horario especial disponibilidade"
+    },
+    {
+      "id": 4,
+      "question": "Qual a garantia dos serviços?",
+      "answer": "Oferecemos 12 meses de garantia em todos os serviços de instalação e 24 meses nos produtos que fornecemos. A garantia cobre defeitos de instalação e problemas de conectividade.",
+      "category": "comercial",
+      "keywords": "garantia defeito instalação produtos conectividade"
+    },
+    {
+      "id": 5,
+      "question": "Como funciona o suporte técnico?",
+      "answer": "Oferecemos suporte via WhatsApp, telefone e email. Para clientes com contrato de manutenção, o tempo de resposta é de até 2 horas em horário comercial e até 4 horas em emergências.",
+      "category": "suporte",
+      "keywords": "suporte whatsapp telefone email manutenção resposta emergência"
+    },
+    {
+      "id": 6,
+      "question": "Fazem manutenção preventiva?",
+      "answer": "Sim! Oferecemos planos de manutenção preventiva que incluem verificação de equipamentos, atualização de firmware, limpeza de racks e relatórios de performance da rede.",
+      "category": "suporte",
+      "keywords": "manutenção preventiva equipamentos firmware racks relatórios performance"
+    },
+    {
+      "id": 7,
+      "question": "Quais equipamentos vocês recomendam?",
+      "answer": "Trabalhamos principalmente com Ubiquiti (UniFi), que oferece excelente custo-benefício e gerenciamento centralizado. Para projetos específicos, também utilizamos outras marcas premium como Cisco e Ruckus.",
+      "category": "tecnico",
+      "keywords": "equipamentos ubiquiti unifi cisco ruckus recomendação gerenciamento"
+    },
+    {
+      "id": 8,
+      "question": "Atendem estabelecimentos com horário de funcionamento restrito?",
+      "answer": "Sim! Adaptamos nosso horário de trabalho para não interferir no funcionamento do seu estabelecimento. Trabalhamos antes da abertura, após o fechamento ou nos dias de fechamento.",
+      "category": "comercial",
+      "keywords": "horário funcionamento restrito estabelecimento adaptação fechamento"
+    },
+    {
+      "id": 9,
+      "question": "Como é feito o cabeamento estruturado?",
+      "answer": "Utilizamos cabos Cat5e ou Cat6 certificados, eletrodutos e canaletas organizadas, patch panels identificados e racks ventilados. Todo cabeamento segue normas técnicas e recebe certificação de performance.",
+      "category": "tecnico",
+      "keywords": "cabeamento estruturado cat5e cat6 eletrodutos patch panels racks normas certificação"
+    },
+    {
+      "id": 10,
+      "question": "Fazem projeto de rede antes da instalação?",
+      "answer": "Sim! Sempre elaboramos um projeto técnico detalhado com planta baixa, pontos de rede, equipamentos necessários e cronograma de execução. O projeto é aprovado pelo cliente antes do início dos trabalhos.",
+      "category": "tecnico",
+      "keywords": "projeto rede planta baixa pontos equipamentos cronograma aprovação"
+    },
+    {
+      "id": 11,
+      "question": "Qual o valor de uma visita técnica?",
+      "answer": "A visita técnica custa R$ 80,00 em Blumenau e região. Este valor é abatido integralmente caso você contrate nossos serviços. Para projetos grandes, a visita pode ser cortesia.",
+      "category": "comercial",
+      "keywords": "visita técnica valor preço blumenau região abatimento cortesia"
+    },
+    {
+      "id": 12,
+      "question": "Atendem em quais cidades?",
+      "answer": "Atendemos Blumenau e região do Vale do Itajaí, incluindo Pomerode, Gaspar, Indaial, Timbó e Ascurra. Para outras localidades, consulte disponibilidade e valores de deslocamento.",
+      "category": "comercial",
+      "keywords": "cidades blumenau vale itajaí pomerode gaspar indaial timbó ascurra deslocamento"
+    }
+  ]
+}

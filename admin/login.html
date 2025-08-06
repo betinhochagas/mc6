@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Painel MC6</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/png" href="../assets/media/images/favicon.webp">
+    <style>
+        body { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .login-panel { background: var(--dark); padding: 40px; border-radius: var(--border-radius); width: 100%; max-width: 400px; text-align: center; }
+        .login-panel h1 { color: var(--accent); }
+        .login-panel input { width: 100%; padding: 15px; margin-bottom: 20px; border-radius: 8px; border: 1px solid var(--gray); background: var(--darker); color: #fff; }
+        .login-panel .btn { width: 100%; }
+        #error-message { color: #ff4d4d; margin-top: 15px; display: none; }
+    </style>
+</head>
+<body>
+    <div class="login-panel">
+        <h1>Painel MC6</h1>
+        <p>Acesso Restrito</p>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+        <p id="error-message">Usuário ou senha inválidos.</p>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+
+            // Em um ambiente real, isso seria uma chamada para o servidor.
+            // Aqui, estamos simulando a verificação.
+            if (user === 'admin' && pass === 'admin') {
+                // Simula o login bem-sucedido e redireciona
+                sessionStorage.setItem('loggedIn', 'true');
+                window.location.href = 'painel/index.html';
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
