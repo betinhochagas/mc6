@@ -1,0 +1,71 @@
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+
+/* Focus indicators mais visíveis */
+*:focus {
+    outline: 2px solid #0066cc !important;
+    outline-offset: 2px !important;
+    border-radius: 2px;
+}
+
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #0066cc;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 10001;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Melhor contraste para textos */
+.hero-description,
+.stat-label,
+.footer-section p {
+    color: #444 !important;
+}
+
+/* Animações reduzidas para usuarios com preferência */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .preloader {
+        display: none !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .btn {
+        border: 2px solid currentColor;
+    }
+    
+    .feature-card,
+    .service-card,
+    .case-card {
+        border: 1px solid #333;
+    }
+}
+
+/* Melhor legibilidade em dispositivos móveis */
+@media (max-width: 768px) {
+    body {
+        font-size: 18px; /* Fonte maior para mobile */
+    }
+    
+    .btn {
+        min-height: 44px; /* Touch target size */
+        min-width: 44px;
+    }
+}

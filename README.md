@@ -1,326 +1,145 @@
-# MC6 Website v5.2.0 🚀
+# MC6 Corporate Professional
 
-Website corporativo da MC6 - Especialistas em Wi-Fi corporativo e infraestrutura de redes em Blumenau e região.
+## 🏢 **Versão Corporativa do Site MC6**
 
-## 🎯 **Novidades v5.2.0 - Sistema Seções Fullscreen**
-- ✅ **Seções Fullscreen**: Features ocupa 100vh quando ativa
-- ✅ **Scroll-Triggered Animations**: Cards com animação sequencial
-- ✅ **Zero Lacunas Visuais**: Eliminadas todas as telas pretas
-- ✅ **Navegação Interna**: Botão hero leva direto ao formulário
-- ✅ **Performance Otimizada**: RequestAnimationFrame e throttling
+Esta pasta contém a versão **Corporate Professional** do site MC6, desenvolvida com design empresarial e funcionalidades específicas para o público B2B.
 
-## 🏗️ Arquitetura do Projeto
+---
 
-### Sistema Mobile-First v5.0.0
-Este projeto implementa um sistema mobile-first dedicado com arquitetura modular:
-
-- **Desktop:** `assets/css/style.css` + `assets/js/main.js`
-- **Mobile:** `assets/css/mobile.css` + `assets/js/mobile.js` (carregamento condicional)
-- **Admin:** Painel administrativo com sistema de login
-
-## 📁 Estrutura do Projeto
+## 📁 **Estrutura da Pasta**
 
 ```
-mc6-website/
-├── 📄 index.html                 # Página principal
-├── 📋 changelog.md               # Histórico de versões (v1.0.0 → v5.0.0)
-├── 📚 DOCUMENTATION.md           # Documentação técnica completa
-├── � README.md                  # Este arquivo - guia do projeto
-│
-├── 📁 assets/
-│   ├── 🎨 css/
-│   │   ├── style.css            # CSS principal (desktop-first)
-│   │   └── mobile.css           # CSS mobile-first modular ⭐ v5.0.0
-│   │
-│   ├── 📜 js/
-│   │   ├── main.js              # JavaScript principal
-│   │   └── mobile.js            # JavaScript mobile-specific ⭐ v5.0.0
-│   │
-│   └── 🖼️ media/
-│       ├── images/              # Imagens otimizadas (WebP)
-│       └── video/               # Vídeos
-│
-├── 📁 admin/                     # Painel administrativo
-│   ├── login.html               # Login do painel
-│   └── painel/
-│       ├── index.html           # Dashboard principal
-│       └── js/admin.js          # JavaScript do admin
-│
-├── 📁 data/                      # Dados JSON
-│   ├── services.json            # Serviços oferecidos
-│   ├── clients.json             # Clientes e testimonials
-│   └── faq.json                 # Perguntas frequentes
-│
-└── 📁 lixo/                      # Arquivos não utilizados
-    ├── feature.md               # Roadmap e funcionalidades futuras
-    ├── CRONOGRAMA.md            # Cronograma de desenvolvimento
-    └── *.js, *.html, *.css     # Arquivos de teste/debug
+corporate/
+├── index.html              # 🏢 Página principal corporativa
+├── assets/
+│   ├── css/
+│   │   ├── style.css       # 💼 Estilos corporativos principais
+│   │   └── mobile.css      # 📱 Responsividade mobile
+│   └── js/
+│       └── main.js         # ⚡ JavaScript corporativo
+└── README.md              # 📚 Esta documentação
 ```
 
-## ✨ **Funcionalidades Principais v5.2.0**
+---
 
-### **🎬 Sistema de Seções Fullscreen**
-- **Features Fullscreen**: Seção "Por que escolher a MC6?" ocupa tela completa
-- **Transições Fluidas**: Eliminadas lacunas visuais entre seções
-- **Scroll-Triggered**: Animações baseadas na posição do scroll
-- **Z-index Hierárquico**: Controle inteligente de camadas
+## 🎨 **Características do Design Corporate**
 
-### **🎯 Navegação e UX**
-- **Hero Slider**: 3 slides automáticos com navegação manual
-- **Scroll Suave**: Navegação interna com scroll-behavior smooth
-- **Botão CTA**: "Faça um Orçamento" leva direto ao formulário
-- **Menu Responsivo**: Header com navegação adaptativa
+### **Visual Identity:**
+- ✅ **Header Branco** com sombra elegante
+- ✅ **Paleta Azul Corporativo** (#0066cc)
+- ✅ **Tipografia Profissional** (Segoe UI)
+- ✅ **Logo Wi-Fi** adequado ao negócio
+- ✅ **Layout Clean** e organizado
 
-### **📊 Seções Implementadas**
-1. **Hero**: Slider com 3 serviços principais + estatísticas
-2. **Features**: Diferenciais com métricas e card destacado (NOC)
-3. **Cases**: Galeria de projetos com filtros por categoria
-4. **Services**: Carousel automático de serviços técnicos
-5. **Testimonials**: Depoimentos de clientes com navegação
-6. **FAQ**: Sistema de busca e filtros por categoria
-7. **Contact**: Formulário completo + métodos de contato
+### **Funcionalidades:**
+- ✅ **Preloader Animado** com branding corporativo
+- ✅ **Menu Mobile** responsivo com hamburger
+- ✅ **Scroll Suave** entre seções
+- ✅ **Formulário Inteligente** com validação
+- ✅ **Animações Sutis** e profissionais
+- ✅ **Performance Otimizada**
 
-### **🎨 Animações e Interações**
-- **Cards Staggered**: Animação sequencial com delays (0.3s, 0.6s, 0.9s)
-- **Hover Effects**: Transformações e gradients nos cards
-- **Loading States**: Preloader animado no carregamento
-- **Floating Elements**: Ícones flutuantes na seção hero
+---
 
-### **📱 Sistema Mobile-First v5.0.0**
-- **Detecção Inteligente**: 3 métodos de detecção de dispositivos
-- **Carregamento Condicional**: CSS/JS mobile apenas quando necessário
-- **Performance Otimizada**: Redução de 40% no payload para desktop
-- **Orientação Responsiva**: Auto-reload em mudanças de orientação
+## 🚀 **Como Acessar**
 
-## 🚀 Como Executar
-
-### Desenvolvimento Local
-```bash
-# 1. Clone o repositório
-git clone https://github.com/betinhochagas/mc6.git
-
-# 2. Instale as dependências
-npm install
-
-# 3. Execute o servidor de desenvolvimento
-npm run dev
+### **Local:**
+```
+file:///c:/xampp/htdocs/mc6/corporate/index.html
 ```
 
-### Servidor Web Simples
-```bash
-# Python 3
-python -m http.server 8000
-
-# Node.js
-npx serve .
-
-# PHP (XAMPP)
-# Coloque na pasta htdocs e acesse via localhost
+### **Servidor Local:**
+```
+http://localhost/mc6/corporate/
 ```
 
-## 🛠️ Build e Deploy
+---
 
-```bash
-# Build para produção
-npm run build
+## 📊 **Seções da Página**
 
-# Análise do bundle
-npm run analyze
+1. **🏠 Hero Section**
+   - Apresentação executiva com estatísticas
+   - CTAs estratégicos para conversão
+   - Métricas de credibilidade (99.9% SLA, 500+ projetos)
 
-# Testes
-npm run test
+2. **⭐ Diferenciais**
+   - Cards com especialização técnica
+   - Monitoramento proativo NOC 24/7
+   - Documentação técnica completa
 
-# Deploy staging
-npm run deploy:staging
+3. **🔧 Serviços**
+   - Wi-Fi Corporativo (R$ 2.500+)
+   - Cabeamento Estruturado (R$ 180/ponto)
+   - Eventos Temporários (sob consulta)
+   - Residencial Premium (R$ 1.800+)
 
-# Deploy produção
-npm run deploy:production
-```
+4. **💼 Cases de Sucesso**
+   - Centro Empresarial Blumenau (500+ usuários)
+   - Oktoberfest 2024 (2000+ participantes)
+   - Residência Premium Pomerode (800m²)
 
-## 💻 Tecnologias Utilizadas
+5. **📞 Contato**
+   - Formulário de orçamento completo
+   - Múltiplos canais de comunicação
+   - Informações de contato detalhadas
 
-### Frontend
-- **HTML5** - Estrutura semântica com Schema.org
-- **CSS3** - Variáveis CSS, Flexbox, Grid, Mobile-first
-- **JavaScript ES6+** - Modules, Async/Await, Intersection Observer
+---
 
-### Build Tools
-- **Webpack 5** - Module bundler e otimização
-- **PostCSS** - Processamento CSS com autoprefixer
-- **Babel** - Transpilação JavaScript
+## 🎯 **Público-Alvo**
 
-### Performance
-- **Service Worker** - Cache strategy para performance
-- **WebP Images** - Imagens otimizadas
-- **Lazy Loading** - Carregamento assíncrono
-- **Preload/Prefetch** - Otimização de recursos críticos
+- **Empresas B2B** que buscam infraestrutura de TI
+- **Gestores de TI** em busca de soluções profissionais
+- **Eventos corporativos** que precisam de conectividade
+- **Residências premium** que valorizam qualidade
 
-### PWA Features
-- **Manifest.json** - App-like experience
-- **Offline Support** - Funcionalidade sem internet
-- **Mobile Optimized** - Touch targets e gestures
+---
 
-## ✨ Funcionalidades Implementadas
+## 🔗 **Links de Referência**
 
-### Core Features (v5.0.0)
-- ✅ **Sistema Mobile-First** - Arquitetura responsiva dedicada
-- ✅ **Dark/Light Mode** - Alternância de temas com persistência
-- ✅ **FAQ Interativo** - Sistema com categorias e busca
-- ✅ **Testimonials Carousel** - Carrossel automático com controles
-- ✅ **Formulário de Contato** - Validação e feedback visual
-- ✅ **Smooth Scrolling** - Navegação fluida entre seções
+- **Site Principal:** `../index.html`
+- **Demo Headers:** `../demo-headers.html`
+- **Demo Transições:** `../demo-transitions.html`
+- **Repositório GitHub:** https://github.com/betinhochagas/mc6
 
-### Admin Panel
-- ✅ **Sistema de Login** - Autenticação básica
-- ✅ **Gestão de Clientes** - CRUD para clientes
-- ✅ **Gestão de Serviços** - CRUD para serviços
-- ✅ **Dashboard** - Visão geral dos dados
+---
 
-### Performance & SEO
-- ✅ **Lighthouse Score** - 90+ performance
-- ✅ **SEO Otimizado** - Meta tags completas
-- ✅ **Schema.org** - Structured data
-- ✅ **Open Graph** - Social media optimization
+## 📈 **Vantagens desta Versão**
 
-## 📱 Responsividade
+### **Design Corporativo:**
+- Transmite **confiança** e **profissionalismo**
+- Visual **adequado ao ambiente B2B**
+- **Credibilidade** aumentada com métricas
 
-### Breakpoints Estratégicos
-- **576px** - Mobile pequeno
-- **768px** - Mobile/Tablet (breakpoint principal)
-- **992px** - Tablet landscape
-- **1200px** - Desktop pequeno
-- **1400px** - Desktop grande
+### **Experiência do Usuário:**
+- **Navegação intuitiva** e limpa
+- **Formulários otimizados** para conversão
+- **Performance superior** com lazy loading
 
-### Mobile Features v5.0.0
-- Touch-optimized navigation
-- Swipe gestures
-- Mobile-specific animations
-- Conditional JavaScript loading
-- Optimized font sizes with clamp()
+### **SEO e Marketing:**
+- **Estrutura semântica** otimizada
+- **Meta tags completas** para redes sociais
+- **Schema.org** para melhor indexação
 
-## 🔧 Configuração de Desenvolvimento
-
-### VS Code Extensions Recomendadas
-- Live Server
-- Prettier
-- ESLint
-- CSS Peek
-- Auto Rename Tag
-
-### Variáveis de Ambiente
-```env
-NODE_ENV=development
-WEBPACK_MODE=development
-```
-
-## 📊 Métricas e Performance
-
-### Lighthouse Scores (Target)
-- **Performance:** 90+
-- **Accessibility:** 95+
-- **Best Practices:** 95+
-- **SEO:** 100
+---
 
 ## 🛠️ **Tecnologias Utilizadas**
 
-### **Frontend**
-- **HTML5**: Estrutura semântica e acessível
-- **CSS3**: Flexbox, Grid, Custom Properties, Animations
-- **JavaScript ES6+**: Módulos, Arrow Functions, Async/Await
-- **Font Awesome 6**: Biblioteca de ícones
-
-### **Performance**
-- **WebP**: Imagens otimizadas para web
-- **Lazy Loading**: Carregamento sob demanda
-- **Critical CSS**: CSS crítico inline
-- **RequestAnimationFrame**: Animações performáticas
-
-### **SEO e Meta**
-- **Open Graph**: Integração redes sociais
-- **Schema.org**: Dados estruturados
-- **Meta Tags**: Otimização completa
-- **Canonical URLs**: Prevenção de conteúdo duplicado
-
-## 📚 **Documentação e Changelog**
-
-### **Arquivos de Documentação**
-- `README.md` - Este arquivo (guia principal)
-- `DOCUMENTATION.md` - Documentação técnica completa
-- `CHANGELOG_v5.2.0.md` - Changelog da versão atual
-- `changelog.md` - Histórico completo de versões
-
-### **Versões Principais**
-- **v5.2.0** - Sistema de Seções Fullscreen ⭐ Atual
-- **v5.1.0** - Visual Metrics e NOC Highlighting
-- **v5.0.0** - Sistema Mobile-First Inteligente
-- **v4.0.0** - Implementação completa das seções
-- **v3.0.0** - Sistema de FAQ e testimonials
-
-## 🤝 **Contribuição**
-
-### **Guidelines**
-1. Siga os padrões de código existentes
-2. Teste em múltiplos dispositivos
-3. Mantenha a documentação atualizada
-4. Use commits semânticos
-
-### **Workflow**
-```bash
-# 1. Crie uma branch para sua feature
-git checkout -b feature/nova-funcionalidade
-
-# 2. Faça suas alterações e commits
-git add .
-git commit -m "feat: adiciona nova funcionalidade"
-
-# 3. Push e abra um Pull Request
-git push origin feature/nova-funcionalidade
-```
+- **HTML5** semântico e acessível
+- **CSS3** com flexbox/grid e animações
+- **JavaScript ES6+** moderno e performático
+- **Font Awesome 6.4.0** para ícones
+- **Responsive Design** mobile-first
 
 ---
 
-## 📞 **Contato**
+## 📝 **Notas de Desenvolvimento**
 
-**MC6 - Soluções em Conectividade**  
-📍 Blumenau, SC, Brasil  
-📞 +55 (47) 3288-3002  
-📧 contato@mc6.com.br  
-💬 [WhatsApp Comercial](https://wa.me/554732883002)
-
----
-
-*Desenvolvido com ❤️ para transformar a conectividade empresarial em Blumenau e região.*
-- **Best Practices:** 90+
-- **SEO:** 95+
-
-### Bundle Size (Production)
-- **CSS:** ~50KB (gzipped)
-- **JavaScript:** ~80KB (gzipped)
-- **Total:** ~130KB (gzipped)
-
-## 🤝 Contribuição
-
-### Processo de Development
-1. Create feature branch
-2. Implement changes
-3. Update documentation
-4. Run tests
-5. Create pull request
-
-### Code Standards
-- ESLint + Prettier
-- Semantic commits
-- CSS BEM methodology
-- JavaScript modules
-
-## 📞 Contato
-
-**MC6 - Soluções em Conectividade**
-- 📧 Email: contato@mc6.com.br
-- 📱 WhatsApp: (47) 3288-3002
-- 🌐 Website: https://www.mc6.com.br
-- 📍 Blumenau, Santa Catarina
+- **Versão:** Corporate Professional v1.0
+- **Desenvolvido:** Agosto 2025
+- **Compatibilidade:** Navegadores modernos
+- **Performance:** Otimizada para velocidade
+- **Acessibilidade:** WCAG 2.1 Level AA
 
 ---
 
-**Desenvolvido com ❤️ pela equipe MC6**
+**🎉 Versão Corporate Professional desenvolvida com excelência técnica e design profissional!**

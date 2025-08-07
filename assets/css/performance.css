@@ -1,0 +1,64 @@
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* Critical CSS inline - mover para <head> */
+/* Este arquivo deve ser minificado e incluído inline */
+
+/* Above the fold styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e9ecef;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Lazy loading styles */
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}
+
+/* Reduced motion for performance */
+.reduce-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+/* GPU acceleration for animations */
+.feature-card,
+.service-card,
+.case-card {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Optimize images */
+img {
+    image-rendering: optimizeQuality;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* Content visibility for performance */
+.cases,
+.contact {
+    content-visibility: auto;
+    contain-intrinsic-size: 600px;
+}

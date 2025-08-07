@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +26,19 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.mc6.com.br">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Additional PWA meta tags -->
+    <meta name="application-name" content="MC6 Corporate">
+    <meta name="msapplication-TileColor" content="#0066cc">
+    <meta name="msapplication-config" content="browserconfig.xml">
+    
+    <!-- Security headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -79,7 +92,6 @@
     }
     </script>
     <link rel="icon" type="image/png" href="assets/media/images/favicon.webp">
-
     <link rel="apple-touch-icon" href="assets/media/images/apple-touch-icon.png"> 
     
     <!-- Preload recursos críticos -->
@@ -89,234 +101,400 @@
     
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <!-- CORRIGIDO: Font Awesome carregamento direto para evitar problemas -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/mobile.css" media="(max-width: 992px)">
+    <link rel="stylesheet" href="assets/css/accessibility.css">
 </head>
 <body>
+    <!-- Skip to main content para acessibilidade -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
     <!-- Preloader -->
     <div id="preloader" class="preloader">
         <div class="preloader-content">
             <div class="preloader-logo">
-                <div class="logo-icon pulse">
+                <div class="logo-icon">
                     <i class="fas fa-wifi"></i>
                 </div>
-                <h2>MC6</h2>
-                <p>Carregando...</p>
+                <div class="logo-text">MC6</div>
             </div>
             <div class="loading-bar">
                 <div class="loading-progress"></div>
             </div>
+            <div class="loading-text">Carregando infraestrutura...</div>
         </div>
     </div>
 
+    <!-- Header Corporate Professional -->
     <header class="header">
         <div class="container">
-            <a href="#inicio" class="logo">
+            <div class="logo-section">
                 <div class="logo-icon">
-                    <i class="fas fa-wifi" aria-hidden="true"></i>
+                    <i class="fas fa-wifi"></i>
                 </div>
-                <div class="logo-text">
-                    <h1>MC6</h1>
-                    <p>A Wi-Fi que funciona</p>
-                </div>
-            </a>
-            
-            <nav class="navbar" id="navbar">
-                <ul>
-                    <li><a href="#inicio" class="active">Início</a></li>
+                <div class="logo-text">MC6</div>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#diferenciais">Diferenciais</a></li>
                     <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#clientes">Clientes</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#cases">Cases</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
-            
-            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navbar">
-                <div class="icon-bars">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            <div class="header-contact">
+                <div class="phone-info">
+                    <i class="fas fa-phone"></i>
+                    (47) 3288-3002
                 </div>
+                <a href="#orcamento" class="cta-btn">Solicitar Orçamento</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
     </header>
 
-    <main>
-        <section id="inicio" class="hero">
-            <!-- Hero Floating Elements -->
-            <div class="hero-floating-elements">
-                <div class="floating-icon floating-icon-1">
-                    <i class="fas fa-wifi"></i>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div class="logo-text">MC6</div>
                 </div>
-                <div class="floating-icon floating-icon-2">
-                    <i class="fas fa-network-wired"></i>
-                </div>
-                <div class="floating-icon floating-icon-3">
-                    <i class="fas fa-server"></i>
-                </div>
-                <div class="floating-icon floating-icon-4">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <div class="floating-icon floating-icon-5">
-                    <i class="fas fa-bolt"></i>
-                </div>
+                <button class="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="#inicio"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="#diferenciais"><i class="fas fa-star"></i> Diferenciais</a></li>
+                    <li><a href="#servicos"><i class="fas fa-cogs"></i> Serviços</a></li>
+                    <li><a href="#cases"><i class="fas fa-briefcase"></i> Cases</a></li>
+                    <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-contact">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(47) 3288-3002</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </div>
+                <a href="#orcamento" class="mobile-cta-btn">Solicitar Orçamento</a>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="inicio" class="hero" aria-labelledby="hero-title">
             <div class="container">
                 <div class="hero-content">
-                    <div> 
-                        <div class="hero-slider">
-                            <div class="hero-slide active">
-                                <h1>Infraestrutura Wi-Fi <span>Empresarial</span></h1>
-                                <p>Equipamentos Ubiquiti/UniFi de nível corporativo com gestão centralizada. Suporte para 500+ usuários simultâneos, VLANs segmentadas e monitoramento 24/7 em Blumenau e região.</p>
-                            </div>
-                            <div class="hero-slide">
-                                <h1>Wi-Fi para <span>Grandes Eventos</span></h1>
-                                <p>Infraestrutura temporária de alta densidade testada na Oktoberfest. Suporte para milhares de conexões simultâneas com setup completo em 48h e cobertura total do evento.</p>
-                            </div>
-                            <div class="hero-slide">
-                                <h1>Residencial <span>Premium</span></h1>
-                                <p>Tecnologia Wi-Fi 6 com mesh inteligente para casas de alto padrão. Cobertura uniforme em até 800m², ideal para smart homes, streaming 4K e home office profissional.</p>
-                            </div>
+                    <div class="hero-text">
+                        <div class="hero-badge">
+                            <i class="fas fa-certificate"></i>
+                            Certificados Ubiquiti/UniFi
                         </div>
-                    </div>
-
-                    <div class="hero-static-content">
-                        <a href="#orcamento" class="btn btn-primary hero-btn">
-                            <i class="fas fa-calculator" aria-hidden="true"></i> Faça um Orçamento
-                        </a>
+                        <h1>Infraestrutura Wi-Fi <span class="highlight">Empresarial</span></h1>
+                        <p class="hero-description">
+                            Soluções completas de conectividade corporativa com equipamentos de nível empresarial. 
+                            Suporte para 500+ usuários simultâneos, VLANs segmentadas e monitoramento 24/7 em 
+                            Blumenau e região.
+                        </p>
                         <div class="hero-stats">
-                            <div class="stat-card">
-                                <div class="number">99.9%</div>
-                                <div class="label">SLA Garantido</div>
+                            <div class="stat-item">
+                                <div class="stat-number">99.9%</div>
+                                <div class="stat-label">SLA Garantido</div>
                             </div>
-                            <div class="stat-card">
-                                <div class="number">2000+</div>
-                                <div class="label">Usuários Atendidos</div>
+                            <div class="stat-item">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Projetos Entregues</div>
                             </div>
-                            <div class="stat-card">
-                                <div class="number">48h</div>
-                                <div class="label">Deploy Completo</div>
+                            <div class="stat-item">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Suporte NOC</div>
+                            </div>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="#orcamento" class="btn btn-primary">
+                                <i class="fas fa-calculator"></i>
+                                Solicitar Orçamento
+                            </a>
+                            <a href="#cases" class="btn btn-secondary">
+                                <i class="fas fa-play"></i>
+                                Ver Cases
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="assets/media/images/hero-emp.webp" alt="Infraestrutura Wi-Fi Empresarial" loading="eager">
+                        <div class="image-overlay">
+                            <div class="tech-specs">
+                                <div class="spec-item">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Wi-Fi 6</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Enterprise Security</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Real-time Monitoring</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="hero-image-container">
-                    <div class="hero-image-slider">
-                        <img src="assets/media/images/hero-emp.webp" alt="Wi-Fi para Empresas" class="hero-bg-image active" loading="eager">
-                        <img src="assets/media/images/hero-eventos.webp" alt="Wi-Fi para Eventos" class="hero-bg-image" loading="lazy">
-                        <img src="assets/media/images/hero-home.webp" alt="Wi-Fi Residencial Premium" class="hero-bg-image" loading="lazy">
-                    </div>
-                    <button class="hero-nav-arrow prev" aria-label="Slide anterior" title="Slide anterior"><i class="fas fa-chevron-left"></i></button>
-                    <button class="hero-nav-arrow next" aria-label="Próximo slide" title="Próximo slide"><i class="fas fa-chevron-right"></i></button>
-                </div>
+            </div>
+            <div class="hero-background">
+                <div class="hero-grid"></div>
             </div>
         </section>
 
+        <!-- Features Section -->
         <section id="diferenciais" class="features">
             <div class="container">
-                <div class="section-title animate-on-scroll">
-                    <h2>Por que escolher a <span>MC6?</span></h2>
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-star"></i>
+                        Nossos Diferenciais
+                    </div>
+                    <h2>Por que escolher a <span class="highlight">MC6?</span></h2>
                     <p>Expertise técnica comprovada e metodologia própria para infraestruturas de conectividade de alta performance.</p>
                 </div>
                 <div class="features-grid">
-                    <div class="feature-card animate-on-scroll">
-                        <div class="feature-icon"><i class="fas fa-certificate"></i></div>
-                        <div class="feature-metrics">
-                            <span class="metric-badge">+500 Projetos</span>
-                            <span class="metric-badge">10+ Anos</span>
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="feature-metrics">
+                                <span class="metric-badge">+500 Projetos</span>
+                                <span class="metric-badge">10+ Anos</span>
+                            </div>
                         </div>
                         <h3>Especialização Técnica</h3>
                         <p>Certificados em arquiteturas Ubiquiti/UniFi com metodologia proprietária de site survey, design de RF e otimização de throughput para ambientes críticos.</p>
+                        <div class="feature-list">
+                            <div class="list-item">
+                                <i class="fas fa-check"></i>
+                                <span>Certificação Enterprise Wireless</span>
+                            </div>
+                            <div class="list-item">
+                                <i class="fas fa-check"></i>
+                                <span>Site Survey Profissional</span>
+                            </div>
+                            <div class="list-item">
+                                <i class="fas fa-check"></i>
+                                <span>Design de RF Otimizado</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="feature-card animate-on-scroll featured-card">
+                    
+                    <div class="feature-card featured">
                         <div class="featured-badge">
-                            <i class="fas fa-star"></i>
+                            <i class="fas fa-crown"></i>
                             <span>Diferencial Único</span>
                         </div>
-                        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                        <div class="feature-metrics">
-                            <span class="metric-badge primary">NOC 24/7</span>
-                            <span class="metric-badge primary">99.9% SLA</span>
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="feature-metrics">
+                                <span class="metric-badge primary">NOC 24/7</span>
+                                <span class="metric-badge primary">99.9% SLA</span>
+                            </div>
                         </div>
                         <h3>Monitoramento Proativo</h3>
                         <p>NOC próprio com monitoramento em tempo real via UNMS/UniFi Controller. Detecção automática de anomalias e resolução preventiva antes do impacto operacional.</p>
+                        <div class="feature-list">
+                            <div class="list-item">
+                                <i class="fas fa-check"></i>
+                                <span>Centro de Monitoramento 24/7</span>
+                            </div>
+                            <div class="list-item">
+                                <i class="fas fa-check"></i>
+                                <span>Alertas Automáticos</span>
+                            </div>
+                            <div class="list-item">
+                                <i class="fas fa-check"></i>
+                                <span>Resolução Proativa</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="feature-card animate-on-scroll">
-                        <div class="feature-icon"><i class="fas fa-file-code"></i></div>
-                        <div class="feature-metrics">
-                            <span class="metric-badge">100% Entrega</span>
-                            <span class="metric-badge">Documentado</span>
+                    
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-file-code"></i>
+                            </div>
+                            <div class="feature-metrics">
+                                <span class="metric-badge">100% Entrega</span>
+                                <span class="metric-badge">Documentado</span>
+                            </div>
                         </div>
                         <h3>Documentação Técnica</h3>
                         <p>Entrega completa com diagrama de rede, configurações, senhas administrativas e treinamento da equipe interna para autonomia operacional.</p>
+                        <div class="feature-list">
+                            <div class="list-item">
+                                <i class="fas fa-check"></i>
+                                <span>Diagramas de Rede Completos</span>
+                            </div>
+                            <div class="list-item">
+                                <i class="fas fa-check"></i>
+                                <span>Manual de Operação</span>
+                            </div>
+                            <div class="list-item">
+                                <i class="fas fa-check"></i>
+                                <span>Treinamento da Equipe</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Services Section -->
+        <section id="servicos" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-cogs"></i>
+                        Nossas Soluções
+                    </div>
+                    <h2>Soluções <span class="highlight">Corporativas</span></h2>
+                    <p>Infraestrutura completa de TI e conectividade para empresas que buscam excelência e confiabilidade.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3>Wi-Fi Corporativo</h3>
+                        <p>Redes empresariais de alta performance com equipamentos Ubiquiti/UniFi.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Suporte 500+ usuários</li>
+                            <li><i class="fas fa-check"></i> VLANs segmentadas</li>
+                            <li><i class="fas fa-check"></i> Gestão centralizada</li>
+                            <li><i class="fas fa-check"></i> Wi-Fi 6 Enterprise</li>
+                        </ul>
+                        <div class="service-price">
+                            <span class="price-label">A partir de</span>
+                            <span class="price-value">R$ 2.500</span>
+                        </div>
+                        <a href="#orcamento" class="service-btn">Solicitar Orçamento</a>
+                    </div>
+                    
+                    <div class="service-card popular">
+                        <div class="popular-badge">
+                            <i class="fas fa-star"></i>
+                            Mais Popular
+                        </div>
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Cabeamento Estruturado</h3>
+                        <p>Infraestrutura completa CAT6/7 com certificação e garantia estendida.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Certificação ANATEL</li>
+                            <li><i class="fas fa-check"></i> Cabeamento CAT6/7</li>
+                            <li><i class="fas fa-check"></i> Rack profissional</li>
+                            <li><i class="fas fa-check"></i> Garantia 15 anos</li>
+                        </ul>
+                        <div class="service-price">
+                            <span class="price-label">A partir de</span>
+                            <span class="price-value">R$ 180<small>/ponto</small></span>
+                        </div>
+                        <a href="#orcamento" class="service-btn">Solicitar Orçamento</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Eventos Temporários</h3>
+                        <p>Setup completo para eventos com milhares de conexões simultâneas.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Setup em 48h</li>
+                            <li><i class="fas fa-check"></i> Cobertura total</li>
+                            <li><i class="fas fa-check"></i> Suporte on-site</li>
+                            <li><i class="fas fa-check"></i> Monitoramento 24/7</li>
+                        </ul>
+                        <div class="service-price">
+                            <span class="price-label">Consulte</span>
+                            <span class="price-value">Orçamento</span>
+                        </div>
+                        <a href="#orcamento" class="service-btn">Solicitar Orçamento</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Residencial Premium</h3>
+                        <p>Wi-Fi 6 mesh inteligente para residências de alto padrão.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Cobertura até 800m²</li>
+                            <li><i class="fas fa-check"></i> Smart Home ready</li>
+                            <li><i class="fas fa-check"></i> Streaming 4K/8K</li>
+                            <li><i class="fas fa-check"></i> Home Office Pro</li>
+                        </ul>
+                        <div class="service-price">
+                            <span class="price-label">A partir de</span>
+                            <span class="price-value">R$ 1.800</span>
+                        </div>
+                        <a href="#orcamento" class="service-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cases Section -->
         <section id="cases" class="cases">
             <div class="container">
-                <div class="section-title animate-on-scroll">
-                    <h2>Cases de <span>Sucesso</span></h2>
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-briefcase"></i>
+                        Portfolio
+                    </div>
+                    <h2>Cases de <span class="highlight">Sucesso</span></h2>
                     <p>Conheça alguns projetos que transformaram a conectividade dos nossos clientes.</p>
                 </div>
                 
-                <!-- Filtros de Cases -->
-                <div class="cases-filters animate-on-scroll">
-                    <button class="filter-btn active" data-filter="all">
-                        <i class="fas fa-th"></i>
-                        Todos
-                    </button>
-                    <button class="filter-btn" data-filter="wifi">
-                        <i class="fas fa-wifi"></i>
-                        Wi-Fi
-                    </button>
-                    <button class="filter-btn" data-filter="evento">
-                        <i class="fas fa-calendar-alt"></i>
-                        Eventos
-                    </button>
-                    <button class="filter-btn" data-filter="residencial">
-                        <i class="fas fa-home"></i>
-                        Residencial
-                    </button>
-                    <button class="filter-btn" data-filter="corporativo">
-                        <i class="fas fa-building"></i>
-                        Corporativo
-                    </button>
-                </div>
-                
                 <div class="cases-grid">
-                    <div class="case-card animate-on-scroll" data-category="wifi corporativo" data-gallery='["assets/media/images/unifi.webp", "assets/media/images/controller.webp", "assets/media/images/cabling.webp"]'>
+                    <div class="case-card">
                         <div class="case-image">
                             <img src="assets/media/images/unifi.webp" alt="Projeto Wi-Fi Corporativo" loading="lazy">
-                            <div class="case-gallery-overlay">
-                                <div class="gallery-preview">
-                                    <div class="gallery-thumbnails"></div>
-                                    <div class="gallery-info">
-                                        <i class="fas fa-images"></i>
-                                        <span>Ver Galeria</span>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="case-overlay">
                                 <div class="case-stats">
                                     <div class="stat-item">
                                         <span class="stat-number">500+</span>
-                                        <span class="stat-label">Usuários Simultâneos</span>
+                                        <span class="stat-label">Usuários</span>
                                     </div>
                                     <div class="stat-item">
                                         <span class="stat-number">99.9%</span>
-                                        <span class="stat-label">Uptime Alcançado</span>
+                                        <span class="stat-label">Uptime</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="case-content">
+                            <div class="case-category">
+                                <i class="fas fa-building"></i>
+                                Corporativo
+                            </div>
                             <h3>Centro Empresarial Blumenau</h3>
                             <p>Implantação de rede Wi-Fi de alta densidade para atender 15 empresas simultaneamente, com gestão centralizada e controle de acesso por VLAN.</p>
                             <div class="case-tags">
@@ -324,21 +502,22 @@
                                 <span class="tag">VLAN Segmentada</span>
                                 <span class="tag">Gestão 24/7</span>
                             </div>
+                            <div class="case-results">
+                                <div class="result-item">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>300% melhoria na velocidade</span>
+                                </div>
+                                <div class="result-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Zero incidentes de segurança</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="case-card animate-on-scroll" data-category="wifi evento" data-gallery='["assets/media/images/controller.webp", "assets/media/images/unifi.webp", "assets/media/images/rack.webp"]'>
+                    <div class="case-card">
                         <div class="case-image">
                             <img src="assets/media/images/controller.webp" alt="Projeto Evento Corporativo" loading="lazy">
-                            <div class="case-gallery-overlay">
-                                <div class="gallery-preview">
-                                    <div class="gallery-thumbnails"></div>
-                                    <div class="gallery-info">
-                                        <i class="fas fa-images"></i>
-                                        <span>Ver Galeria</span>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="case-overlay">
                                 <div class="case-stats">
                                     <div class="stat-item">
@@ -347,12 +526,16 @@
                                     </div>
                                     <div class="stat-item">
                                         <span class="stat-number">48h</span>
-                                        <span class="stat-label">Setup Completo</span>
+                                        <span class="stat-label">Setup</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="case-content">
+                            <div class="case-category">
+                                <i class="fas fa-calendar-alt"></i>
+                                Eventos
+                            </div>
                             <h3>Oktoberfest Blumenau 2024</h3>
                             <p>Infraestrutura temporária para o maior evento de SC, suportando milhares de conexões simultâneas com cobertura total do parque.</p>
                             <div class="case-tags">
@@ -360,26 +543,40 @@
                                 <span class="tag">Alta Capacidade</span>
                                 <span class="tag">Monitoramento Real-time</span>
                             </div>
+                            <div class="case-results">
+                                <div class="result-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>100% cobertura do evento</span>
+                                </div>
+                                <div class="result-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Zero downtime durante evento</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="case-card animate-on-scroll" data-category="wifi residencial" data-gallery='["assets/media/images/cabling.webp", "assets/media/images/micro.webp", "assets/media/images/unifi.webp"]'>
+                    <div class="case-card">
                         <div class="case-image">
                             <img src="assets/media/images/cabling.webp" alt="Projeto Residencial Premium" loading="lazy">
                             <div class="case-overlay">
                                 <div class="case-stats">
                                     <div class="stat-item">
-                                        <span class="stat-number">1Gbps</span>
-                                        <span class="stat-label">Velocidade Total</span>
+                                        <span class="stat-number">800m²</span>
+                                        <span class="stat-label">Cobertura</span>
                                     </div>
                                     <div class="stat-item">
-                                        <span class="stat-number">100%</span>
-                                        <span class="stat-label">Cobertura</span>
+                                        <span class="stat-number">1Gbps</span>
+                                        <span class="stat-label">Velocidade</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="case-content">
+                            <div class="case-category">
+                                <i class="fas fa-home"></i>
+                                Residencial
+                            </div>
                             <h3>Residência Alto Padrão - Pomerode</h3>
                             <p>Rede doméstica premium com cobertura total em 800m², home office e entretenimento 4K sem interrupções.</p>
                             <div class="case-tags">
@@ -387,422 +584,216 @@
                                 <span class="tag">Smart Home</span>
                                 <span class="tag">Cobertura Premium</span>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="servicos" class="services">
-            <div class="container">
-                <div class="section-title animate-on-scroll">
-                    <h2>Nossas <span>Soluções</span></h2>
-                    <p>Soluções técnicas completas para redes de alto desempenho e infraestrutura corporativa.</p>
-                </div>
-                
-                <div class="services-wrapper">
-                    <div id="services-track-container" class="services-track"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="clientes" class="clients">
-            <div class="container section-title animate-on-scroll">
-                <h2>O que Nossos <span>Clientes</span> Dizem</h2>
-                <p>Depoimentos reais de empresas que confiam na qualidade e excelência da MC6.</p>
-            </div>
-            
-            <!-- Carousel de Depoimentos -->
-            <div class="testimonials-carousel animate-on-scroll">
-                <div class="testimonials-container" id="testimonials-container">
-                    <!-- Os depoimentos serão carregados dinamicamente -->
-                </div>
-                
-                <!-- Navigation Controls -->
-                <div class="testimonials-navigation">
-                    <button class="testimonial-nav prev" id="testimonial-prev" title="Depoimento anterior" aria-label="Depoimento anterior">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="testimonials-dots" id="testimonials-dots">
-                        <!-- Dots serão criados dinamicamente -->
-                    </div>
-                    <button class="testimonial-nav next" id="testimonial-next" title="Próximo depoimento" aria-label="Próximo depoimento">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Indicador de progresso automático -->
-            <div class="testimonials-progress">
-                <div class="progress-bar" id="testimonials-progress-bar"></div>
-            </div>
-        </section>
-
-        <section id="faq" class="faq">
-            <div class="container">
-                <div class="section-title animate-on-scroll">
-                    <h2>Perguntas <span>Frequentes</span></h2>
-                    <p>Tire suas dúvidas sobre nossos serviços, processos e tecnologias.</p>
-                </div>
-                
-                <!-- Busca e Filtros do FAQ -->
-                <div class="faq-controls animate-on-scroll">
-                    <div class="faq-search">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="faq-search" placeholder="Buscar pergunta ou palavra-chave...">
-                        <button type="button" id="clear-search" class="clear-search hidden" title="Limpar busca">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="faq-filters">
-                        <button class="faq-filter-btn active" data-filter="all">
-                            <i class="fas fa-th"></i>
-                            Todas
-                        </button>
-                        <button class="faq-filter-btn" data-filter="tecnico">
-                            <i class="fas fa-wifi"></i>
-                            Técnico
-                        </button>
-                        <button class="faq-filter-btn" data-filter="comercial">
-                            <i class="fas fa-handshake"></i>
-                            Comercial
-                        </button>
-                        <button class="faq-filter-btn" data-filter="suporte">
-                            <i class="fas fa-tools"></i>
-                            Suporte
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Contador de Resultados -->
-                <div class="faq-count">
-                    <i class="fas fa-question-circle"></i>
-                    <span id="faq-visible-count">5 de 12</span> perguntas
-                </div>
-                
-                <!-- Lista de FAQ -->
-                <div class="faq-container" id="faq-container">
-                    <!-- Coluna das Perguntas -->
-                    <div class="faq-questions-column" id="faq-questions-column">
-                        <!-- FAQ items serão carregados via JavaScript -->
-                    </div>
-                    
-                    <!-- Coluna das Respostas -->
-                    <div class="faq-answer-column" id="faq-answer-column">
-                        <div class="faq-answer-placeholder" id="faq-answer-placeholder">
-                            <div class="placeholder-icon">
-                                <i class="fas fa-question-circle"></i>
+                            <div class="case-results">
+                                <div class="result-item">
+                                    <i class="fas fa-home"></i>
+                                    <span>Smart Home completo</span>
+                                </div>
+                                <div class="result-item">
+                                    <i class="fas fa-video"></i>
+                                    <span>Streaming 4K simultâneo</span>
+                                </div>
                             </div>
-                            <h3>Selecione uma pergunta</h3>
-                            <p>Clique em qualquer pergunta à esquerda para ver sua resposta detalhada aqui.</p>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Estado vazio para busca sem resultados -->
-                <div class="faq-empty hidden" id="faq-empty">
-                    <div class="empty-icon">
-                        <i class="fas fa-search"></i>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="section-header">
+                            <div class="section-badge">
+                                <i class="fas fa-envelope"></i>
+                                Entre em Contato
+                            </div>
+                            <h2>Vamos transformar sua <span class="highlight">conectividade</span></h2>
+                            <p>Entre em contato conosco e descubra como podemos otimizar a infraestrutura de TI da sua empresa.</p>
+                        </div>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="method-info">
+                                    <h4>Telefone</h4>
+                                    <p>(47) 3288-3002</p>
+                                    <span>Seg-Sex: 8h às 18h</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="method-info">
+                                    <h4>WhatsApp</h4>
+                                    <p>(47) 99999-9999</p>
+                                    <span>Atendimento 24/7</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="method-info">
+                                    <h4>E-mail</h4>
+                                    <p>contato@mc6.com.br</p>
+                                    <span>Resposta em até 2h</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="method-info">
+                                    <h4>Endereço</h4>
+                                    <p>Blumenau - SC</p>
+                                    <span>Atendimento presencial</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Nenhuma pergunta encontrada</h3>
-                    <p>Tente ajustar sua busca ou explore outras categorias.</p>
-                    <button class="btn btn-primary" onclick="document.getElementById('faq-search').value=''; window.faqManager.search();">
-                        <i class="fas fa-refresh"></i>
-                        Ver Todas as Perguntas
-                    </button>
+                    
+                    <div class="contact-form-container">
+                        <form id="orcamento" class="contact-form">
+                            <h3>Solicite seu Orçamento</h3>
+                            <p>Preencha o formulário e receba uma proposta personalizada em até 24h.</p>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nome">Nome Completo *</label>
+                                    <input type="text" id="nome" name="nome" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="empresa">Empresa</label>
+                                    <input type="text" id="empresa" name="empresa">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">E-mail *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefone">Telefone *</label>
+                                    <input type="tel" id="telefone" name="telefone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="servico">Tipo de Serviço *</label>
+                                <select id="servico" name="servico" required>
+                                    <option value="">Selecione o serviço</option>
+                                    <option value="wifi-corporativo">Wi-Fi Corporativo</option>
+                                    <option value="cabeamento">Cabeamento Estruturado</option>
+                                    <option value="eventos">Eventos Temporários</option>
+                                    <option value="residencial">Residencial Premium</option>
+                                    <option value="consultoria">Consultoria Técnica</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="mensagem">Descreva seu projeto *</label>
+                                <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Conte-nos sobre seu projeto, necessidades específicas, prazo e orçamento estimado..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar Solicitação
+                            </button>
+                            
+                            <div class="form-notice">
+                                <i class="fas fa-shield-alt"></i>
+                                Seus dados estão protegidos pela LGPD
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <section id="orcamento" class="contact-form">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="section-title">
-                        <h2>Solicite seu <span>Orçamento</span></h2>
-                        <p>Conte-nos sobre seu projeto e receba uma proposta personalizada em até 24 horas.</p>
-                    </div>
-                    
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="method-content">
-                                <h4>WhatsApp Direto</h4>
-                                <p>Atendimento imediato</p>
-                                <a href="https://wa.me/554732883002?text=Olá!%20Gostaria%20de%20um%20orçamento." class="method-link">
-                                    +55 (47) 3288-3002
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="method-content">
-                                <h4>E-mail Comercial</h4>
-                                <p>Propostas detalhadas</p>
-                                <a href="mailto:contato@mc6.com.br" class="method-link">
-                                    contato@mc6.com.br
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="method-content">
-                                <h4>Horário de Atendimento</h4>
-                                <p>Segunda a Sexta</p>
-                                <span class="method-link">08:00 às 18:00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form-grid" novalidate>
-                        <div class="form-group">
-                            <label for="name">Nome Completo *</label>
-                            <input type="text" id="name" name="name" required>
-                            <span class="error-message" id="name-error"></span>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company">Empresa</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">E-mail *</label>
-                            <input type="email" id="email" name="email" required>
-                            <span class="error-message" id="email-error"></span>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Telefone/WhatsApp *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                            <span class="error-message" id="phone-error"></span>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <label for="service">Tipo de Serviço</label>
-                            <div class="select-wrapper">
-                                <select id="service" name="service">
-                                    <option value="">Selecione um serviço</option>
-                                    <option value="wifi-corporativo">Wi-Fi Corporativo</option>
-                                    <option value="cabeamento">Cabeamento Estruturado</option>
-                                    <option value="eventos">Wi-Fi para Eventos</option>
-                                    <option value="residencial">Residencial Premium</option>
-                                    <option value="consultoria">Consultoria em TI</option>
-                                    <option value="outros">Outros</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <label for="message">Detalhes do Projeto *</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Descreva brevemente suas necessidades: área a ser coberta, número de usuários, equipamentos existentes, etc." required></textarea>
-                            <span class="error-message" id="message-error"></span>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="privacy" name="privacy" required>
-                                <label for="privacy" class="checkbox-label">
-                                    Concordo com o tratamento dos meus dados conforme a LGPD *
-                                </label>
-                                <span class="error-message" id="privacy-error"></span>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <button type="submit" class="btn btn-primary submit-btn">
-                                <span class="btn-text">
-                                    <i class="fas fa-paper-plane"></i>
-                                    Enviar Solicitação
-                                </span>
-                                <span class="btn-loading hidden">
-                                    <div class="loading-spinner"></div>
-                                    Enviando...
-                                </span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Toast Container -->
-    <div class="toast-container" id="toast-container"></div>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" aria-label="Voltar ao topo">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <footer class="footer" id="contato">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-col">
-                    <h3>MC6</h3>
-                    <p>Especialistas em conectividade. Localizados em Blumenau, SC, atendemos todo o estado com soluções de TI robustas e confiáveis.</p>
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-section">
+                            <div class="logo-icon">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <div class="logo-text">MC6</div>
+                        </div>
+                        <p>Especialistas em conectividade corporativa e infraestrutura de redes de alta performance.</p>
+                    </div>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 
-                <div class="footer-col">
-                    <h3>Navegação</h3>
+                <div class="footer-section">
+                    <h4>Serviços</h4>
                     <ul>
-                        <li><a href="#inicio"><i class="fas fa-chevron-right"></i> Início</a></li>
-                        <li><a href="#servicos"><i class="fas fa-chevron-right"></i> Serviços</a></li>
-                        <li><a href="#clientes"><i class="fas fa-chevron-right"></i> Clientes</a></li>
-                        <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
-                        <li><a href="#contato"><i class="fas fa-chevron-right"></i> Contato</a></li>
+                        <li><a href="#servicos">Wi-Fi Corporativo</a></li>
+                        <li><a href="#servicos">Cabeamento Estruturado</a></li>
+                        <li><a href="#servicos">Eventos Temporários</a></li>
+                        <li><a href="#servicos">Residencial Premium</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-col">
-                    <h3>Contato</h3>
+                <div class="footer-section">
+                    <h4>Empresa</h4>
                     <ul>
-                        <li><a href="tel:+554732883002"><i class="fas fa-phone"></i> +55 (47) 3288-3002</a></li>
-                        <li><a href="mailto:contato@mc6.com.br"><i class="fas fa-envelope"></i> contato@mc6.com.br</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Blumenau, SC, Brasil</a></li>
-                        <li><a href="https://wa.me/554732883002?text=Olá!%20Gostaria%20de%20um%20orçamento."><i class="fab fa-whatsapp"></i> WhatsApp Comercial</a></li>
+                        <li><a href="#diferenciais">Sobre Nós</a></li>
+                        <li><a href="#cases">Cases de Sucesso</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="#orcamento">Orçamento</a></li>
                     </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>(47) 3288-3002</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@mc6.com.br</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Blumenau - SC</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 MC6. Todos os direitos reservados. Desenvolvido por <a href="https://www.seusite.com.br" target="_blank" rel="noopener">Roberto Chagas</a>.</p>
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 MC6 - Todos os direitos reservados</p>
+                    <div class="footer-links">
+                        <a href="#">Política de Privacidade</a>
+                        <a href="#">Termos de Uso</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
-    
+
     <script src="assets/js/main.js"></script>
-    
-    <!-- 
-    ====================================================================
-     SISTEMA MOBILE-FIRST v5.0.0 - INTEGRAÇÃO INTELIGENTE
-    ====================================================================
-    
-    🎯 PROPÓSITO:
-       Sistema de detecção e carregamento condicional que identifica
-       dispositivos móveis e carrega os assets específicos apenas
-       quando necessário, otimizando performance e experiência.
-    
-    🔧 FUNCIONALIDADES:
-       ✅ Detecção multi-layer de dispositivos mobile
-       ✅ Carregamento condicional de CSS mobile
-       ✅ Carregamento condicional de JavaScript mobile  
-       ✅ Classes CSS condicionais no documento
-       ✅ Handlers para mudança de orientação
-       ✅ Reload inteligente no redimensionamento
-    
-    ⚡ OTIMIZAÇÕES:
-       • CSS mobile carregado apenas em dispositivos mobile
-       • JavaScript mobile carregado apenas quando necessário
-       • Media queries específicas para melhor performance
-       • Debouncing de eventos de resize
-    
-    📱 DETECÇÃO MOBILE:
-       • User Agent string detection
-       • Viewport width check (<=768px)
-       • Touch capability detection
-       • Triple-check para máxima precisão
-    
-    📅 IMPLEMENTADO: 04/08/2025 - v5.0.0
-    ====================================================================
-    -->
-    <script>
-        // 📱 DETECÇÃO INTELIGENTE DE DISPOSITIVO MOBILE
-        /* 
-          Função que utiliza 3 métodos diferentes para detectar
-          dispositivos móveis com máxima precisão:
-          1. User Agent string detection
-          2. Viewport width analysis  
-          3. Touch capability detection
-        */
-        function isMobileDevice() {
-            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
-                   window.innerWidth <= 768 ||
-                   (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
-        }
-        
-        // 🚀 CARREGAMENTO CONDICIONAL DE ASSETS MOBILE
-        if (isMobileDevice()) {
-            // 🏷️ Adiciona classe identificadora no documento
-            document.documentElement.classList.add('mobile-device');
-            
-            // 📄 CARREGAMENTO DINÂMICO DO CSS MOBILE
-            /*
-              CSS mobile é carregado apenas quando necessário,
-              reduzindo o payload inicial em ~40% para dispositivos desktop
-            */
-            const mobileCSS = document.createElement('link');
-            mobileCSS.rel = 'stylesheet';
-            mobileCSS.href = 'assets/css/mobile.css';
-            mobileCSS.media = '(max-width: 768px)'; // Media query específica
-            document.head.appendChild(mobileCSS);
-            
-            // 📜 CARREGAMENTO DINÂMICO DO JAVASCRIPT MOBILE
-            /*
-              JavaScript mobile carregado apenas para dispositivos móveis,
-              incluindo funcionalidades específicas como touch events,
-              gestos, menu mobile, etc.
-            */
-            const mobileJS = document.createElement('script');
-            mobileJS.src = 'assets/js/mobile.js';
-            mobileJS.onload = function() {
-                console.log('📱 Mobile JavaScript carregado - v5.0.0');
-            };
-            document.body.appendChild(mobileJS);
-        } else {
-            // 🖥️ Dispositivos desktop recebem classe específica
-            document.documentElement.classList.add('desktop-device');
-        }
-        
-        // 🔄 HANDLER PARA MUDANÇA DE ORIENTAÇÃO
-        /*
-          Detecta mudanças de orientação (portrait/landscape)
-          e recarrega a página após 300ms para garantir
-          que o layout seja recalculado corretamente
-        */
-        window.addEventListener('orientationchange', function() {
-            setTimeout(function() {
-                window.location.reload();
-            }, 300); // Delay para estabilização da orientação
-        });
-        
-        // 📏 HANDLER PARA REDIMENSIONAMENTO DE TELA
-        /*
-          Detecta redimensionamento da janela e recarrega
-          se um dispositivo mobile não tem os scripts mobile carregados.
-          Inclui debouncing de 500ms para performance.
-        */
-        let resizeTimeout;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(function() {
-                // ✅ Recarrega apenas se mobile detection mudou
-                if (isMobileDevice() && !document.querySelector('script[src="assets/js/mobile.js"]')) {
-                    window.location.reload();
-                }
-            }, 500); // Debouncing para evitar reloads excessivos
-        });
-        
-        // 📊 LOG DE INICIALIZAÇÃO
-        console.log('🚀 Sistema Mobile-First v5.0.0 inicializado');
-        console.log('📱 Dispositivo detectado:', isMobileDevice() ? 'Mobile' : 'Desktop');
-    </script>
 </body>
 </html>

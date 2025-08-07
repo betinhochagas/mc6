@@ -1,0 +1,42 @@
+{
+  "name": "MC6 - Wi-Fi Corporativo e Redes",
+  "short_name": "MC6 Corporate",
+  "description": "Soluções completas de conectividade corporativa com equipamentos de nível empresarial",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0066cc",
+  "orientation": "portrait-primary",
+  "lang": "pt-BR",
+  "categories": ["business", "technology", "utilities"],
+  "icons": [
+    {
+      "src": "assets/media/images/logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/media/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Solicitar Orçamento",
+      "url": "/#orcamento",
+      "description": "Solicite um orçamento personalizado"
+    },
+    {
+      "name": "Nossos Serviços",
+      "url": "/#servicos", 
+      "description": "Conheça nossos serviços"
+    },
+    {
+      "name": "Contato",
+      "url": "/#contato",
+      "description": "Entre em contato conosco"
+    }
+  ]
+}
