@@ -1,0 +1,87 @@
+// Script para extrair Critical CSS
+const fs = require('fs');
+const path = require('path');
+
+console.log('🔥 Extraindo Critical CSS...');
+
+// CSS crítico para above-the-fold
+const criticalCSS = `
+/* MC6 - Critical CSS (Above-the-fold) */
+
+/* Reset e base */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter','Segoe UI',sans-serif;line-height:1.7;color:#1a1a1a;background:#fafafa;overflow-x:hidden;font-weight:400}
+
+/* Container */
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* Header crítico */
+.header{position:fixed;top:0;left:0;right:0;background:#fff;z-index:1000;transition:all 0.3s ease;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.header .container{display:flex;align-items:center;justify-content:space-between;padding:15px 20px}
+
+/* Logo */
+.logo-section{display:flex;align-items:center;gap:12px}
+.logo-icon{width:50px;height:50px;background:linear-gradient(135deg,#0066cc,#004a99);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem}
+.logo-text{font-size:1.8rem;font-weight:bold;color:#333}
+
+/* Navigation crítica */
+.nav{display:flex}
+.nav-list{display:flex;list-style:none;gap:30px;margin:0}
+.nav-list a{text-decoration:none;color:#333;font-weight:500;transition:color 0.2s}
+.nav-list a:hover{color:#0066cc}
+
+/* Hero crítico */
+.hero{padding:120px 0 60px;background:linear-gradient(135deg,#f8f9fa,#e9ecef);min-height:70vh}
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero h1{font-size:3rem;line-height:1.2;color:#1a1a1a;font-weight:bold;margin-bottom:20px}
+.hero p{font-size:1.1rem;color:#666;margin-bottom:30px}
+
+/* Botões críticos */
+.btn-corporate{display:inline-flex;align-items:center;gap:8px;padding:15px 30px;border-radius:8px;text-decoration:none;font-weight:600;transition:all 0.2s ease;border:none;cursor:pointer}
+.btn-corporate-primary{background:#0066cc;color:white}
+.btn-corporate-primary:hover{background:#0052a3;transform:translateY(-1px)}
+
+/* Mobile menu button */
+.mobile-menu-btn{display:none;flex-direction:column;gap:4px;background:none;border:none;padding:8px;cursor:pointer}
+.mobile-menu-btn span{width:25px;height:3px;background:#333;transition:all 0.3s ease}
+
+/* Responsive crítico */
+@media (max-width:992px){
+    .nav{display:none}
+    .mobile-menu-btn{display:flex}
+    .hero-content{grid-template-columns:1fr;gap:40px;text-align:center}
+    .hero h1{font-size:2.5rem}
+    .container{padding:0 15px}
+}
+
+@media (max-width:768px){
+    .header .container{padding:12px 15px}
+    .logo-text{font-size:1.5rem}
+    .hero{padding:100px 0 40px}
+    .hero h1{font-size:2.2rem}
+}
+
+/* Preloader crítico */
+.preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;display:flex;align-items:center;justify-content:center;z-index:10000;transition:opacity 0.5s ease}
+.preloader.fade-out{opacity:0;pointer-events:none}
+
+/* Skip link para acessibilidade */
+.skip-link{position:absolute;top:-999px;left:0;background:#0066cc;color:white;padding:8px;z-index:1000;transition:top 0.3s}
+.skip-link:focus{top:0}
+`;
+
+// Salvar Critical CSS
+fs.writeFileSync('assets/css/critical.css', criticalCSS);
+console.log('✅ Critical CSS extraído: assets/css/critical.css');
+
+// Calcular tamanho
+const stats = fs.statSync('assets/css/critical.css');
+const sizeKB = (stats.size / 1024).toFixed(1);
+console.log(`📊 Tamanho do Critical CSS: ${sizeKB}KB`);
+
+if (parseFloat(sizeKB) <= 14) {
+    console.log('🎯 ✅ Critical CSS dentro do limite recomendado (≤14KB)');
+} else {
+    console.log('⚠️  Critical CSS acima do limite recomendado (>14KB)');
+}
