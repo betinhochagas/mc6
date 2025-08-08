@@ -1,0 +1,36 @@
+{
+  "name": "mc6-corporate",
+  "version": "3.0.0",
+  "description": "MC6 Corporate Website - Clean Production Version",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/",
+    "css:purge": "node scripts/purge-css.js",
+    "critical:extract": "node scripts/extract-critical.js",
+    "images:optimize": "node scripts/day3-image-optimization.js",
+    "lighthouse": "lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html",
+    "cleanup": "node scripts/cleanup-project.js",
+    "test": "node scripts/day3-final-test.js"
+  },
+  "devDependencies": {
+    "lighthouse": "^12.8.1",
+    "live-server": "^1.2.0",
+    "postcss": "^8.4.31",
+    "purgecss": "^7.0.2",
+    "sharp": "^0.34.3"
+  },
+  "keywords": [
+    "wi-fi",
+    "corporativo",
+    "redes",
+    "blumenau",
+    "mc6",
+    "performance"
+  ],
+  "author": "MC6 Corporate",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  }
+}

@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Bloquear arquivos desnecessários para SEO
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: *.json
+Disallow: *.md
+
+# Sitemap
+Sitemap: https://www.mc6.com.br/sitemap.xml
+
+# Tempo de crawl delay (opcional)
+Crawl-delay: 1
